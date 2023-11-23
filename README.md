@@ -1,8 +1,8 @@
 # NN-from-scratch
 Development of a neural network using only basic math operations
 
-- [Introduction](#introduction)
-- [Installation](#installation)
+### 1. [Introduction](#introduction)
+### 2. [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -27,7 +27,7 @@ $a^{[1]} = \varphi (z^{[1]})$
 ## Algorithm and function
 
 Forward function
-1. Creates a list with only the input vector inside
+
 
 ## Training process
 This is the contributing section.
