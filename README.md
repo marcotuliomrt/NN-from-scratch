@@ -24,17 +24,26 @@ $\varphi(z)$ : Activation function
 
 $L(ŷ, y)$ : Loss function
 
-$w^{[1]}$ : Weight matrix for the layer l
+$w^{[l]}$ : Weight matrix for the layer l
 
 $a^{[l]}$ : Activations matrix for the layer l
 
-$b^{[1]}$ : Biases matrix for the layer l
+$b^{[l]}$ : Biases matrix for the layer l
 
 
 ### Forward pass:
-$z^{[1]} = w^{[1]} \cdot a^{[l-1]} + b^{[1]}$
 
-$a^{[1]} = \varphi (z^{[1]})$
+Activation function chosen: sigmoid $\sigma(z) = \frac{1}{1 + e^{-z}} $
+
+
+$z^{[l]} = w^{[l]} \cdot a^{[l-1]} + b^{[l]}$ 
+
+$a^{[l]} = \varphi (z^{[l]})$
+
+### Backpropagation:
+
+
+### Optimization:
 
 
 
