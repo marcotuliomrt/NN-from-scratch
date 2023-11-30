@@ -1,0 +1,18 @@
+Training Date and Time: 2023-11-30 12:58:32.928138
+ 
+Net structure: [784, 16, 10]
+ 
+Epoch number: 6
+Batch size: 20
+Learning rate: 0.01
+ 
+Activation function: sigmoid
+Optimizer: Adam
+ 
+Epoch Info: 
+Epoch 1/6,   epoch loss: 0.018606,   epoch time: 34.7s
+Epoch 2/6,   epoch loss: 0.0090627,   epoch time: 36.4s
+Epoch 3/6,   epoch loss: 0.0074526,   epoch time: 35.3s
+Epoch 4/6,   epoch loss: 0.0066097,   epoch time: 36.9s
+Epoch 5/6,   epoch loss: 0.0060799,   epoch time: 35.7s
+Epoch 6/6,   epoch loss: 0.0057091,   epoch time: 37.8s
