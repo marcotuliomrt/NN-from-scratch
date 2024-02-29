@@ -9,8 +9,8 @@ Development of a neural network using only basic math operations
 - #### 2.3. [Optimization](#optimization)
 
 ### 3. [Algorithms and functions](#algorithms-and-functions)
-### 4. [Record of the initial development](#record-of-the-initial-development)
-
+### 4. [References](#references)
+### 5. [Record of the initial development](#record-of-the-initial-development)
 
 
 ## Introduction
@@ -201,6 +201,10 @@ The evaluation process is composed by one loop and just calculates the output of
     accuracy = right_outputs/total_outputs
 
 
+## References
+[Neural Networks and Deep Learning (Course 1 of the Deep Learning Specialization) - Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0)
+
+
 ## Record of the initial development 
 
 
@@ -209,3 +213,4 @@ The evaluation process is composed by one loop and just calculates the output of
     <img src="images/nn1.png" width=320" />
 
 </p>
+
