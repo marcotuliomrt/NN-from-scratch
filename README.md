@@ -9,7 +9,7 @@ Development of a neural network using only basic math operations
 - #### 2.3. [Optimization](#optimization)
 
 ### 3. [Algorithms and functions](#algorithms-and-functions)
-### 4. [Results and metrics](#results-and-metrics)
+### 4. [Record of the initial development](#record-of-the-initial-development)
 
 
 
@@ -162,13 +162,43 @@ The forward function is the simpler one, it defines a list for the activations t
 ### Backpropagation
 Implemented method: backpropagation(self, label, batch_size, activation_func, optimizer)
 
-For the back propagation, the idea is to identify the patterns on the calculations and use it on the algorithm. For example, to create a function that allow the user to choose the size of the net, we must be able to adapt the backpropagation calculation to the net size (number of nodes and number of layers), and by looking at the mathematical expression for the backpropagation, as the numbers of nodes grow, its possible to notice the pattern 
+For the back propagation method the idea is to identify the patterns on the calculations and use it on the algorithm. 
+1. To create a function that allow the user to choose the size of the net, we must be able to adapt the backpropagation calculation to the net size (number of nodes and number of layers), and by looking at the mathematical expression for the backpropagation, as the numbers of layers grow, its possible to notice the pattern repeating in the hidden layers, baing different just on the fist and last layers. So the insight is to check if we are at the first (first layers) calculation or not, if not means we are in the hidden layers already, iterate over the hidden layers (that is when the pattern repeats), save the result of the gradient calculation in a variable (transp_cumulative_partials), and at the last layer make the last calculation, that is different from the other ones because considers the loss function.
+2. There is the selection o the activation functions but this is the last step
+3. For the all optimizations that are calculated in batches is nedded the cumulated gradients of the weights and biases, so they get calculated and saved on variables (dLdw_list_acumulated, dLdb_list_acumulated, m_w, m_b, r_w, r_b) in this method.
 
 ### Optimization
 Implemented method: optimization(self, alpha, optimizer, sample_index)
+The optimization method is called to update the weights and biases. I used mini-batch so I called the method after every batch. The method iterated over the layers, gets every matrix of the parameters list and applies the calculation with the cumulated values calculated on the backpropagation method
 
 ### Training loop
+The training process is composed by 3 loops, the outter one iterates over the epochs, the middle one on the batches of each epoch and the inner one on the samples of each batch. For each sample the process is 
 
+    for each epoch
+        for each batch:
+            for each sample            
+                1. Get the input making sure it's on the right shape and type
+                2. Calculate the output applying the forward method
+                3. Get the target (the same type and shape as the output)
+                4. Apply the backpropagation to get the gradients
+                5. Calculate the loss to plot it and keep track of the learning process
+
+             Optimize to update the parameters
+             Reset cumulated gradients
+
+    Reset cumulated momentum and RMSProp factors (for the Adam optimizer)
+
+
+### Evaluation loop
+The evaluation process is composed by one loop and just calculates the output of the net and compares it to the label, getting the accuracy.
+    
+    for each sample in eval_set
+        1. Get the input making sure it's on the right shape and type
+        2. Calculate the output applying the forward method
+            if output is right
+                iterate couter of "right outputs"
+
+    accuracy = right_outputs/total_outputs
 
 
 ## Record of the initial development 
