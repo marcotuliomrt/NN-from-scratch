@@ -131,6 +131,17 @@ $b_{new} = b - \alpha \cdot factor_{Adam}$
 
 Correction factor: Everytime when you apdate the weights you have to multiply the $factor_{Adam}$ by the correction factor. If you are using mini batch (I used on this project), you accumulate the factors and after the batch size is reached you update the weights with the accumulated factors, and just at this moment you apply the correction factor. It's NOT applyed when it's accumulating the values.
 
+$n:$ Sample index
+
+Correction factor for $   m_{k}: 1-\beta_1^n $
+
+$(m_{k})_{corrected} =  \frac{m_{k}}{1-\beta_1^n}$
+
+Correction factor for $   r_{k}: 1-\beta_2^n $
+
+$(r_{k})_{corrected} =  \frac{r_{k}}{1-\beta_2^n}$
+
+
 
 ## Algorithms and functions
 The neural network was creates as the class NN() initialized just with the arguemnt "params", which is a list where each position of the list repesent a layer and the value represents the number of nodes of the respective layer, e.g. a net with 2 hidden layers each one with 60 nodes. the input layers with 10 nodes and the ouput with 1 layer -> params = [10, 60, 60, 1]
