@@ -133,9 +133,9 @@ Correction factor: Everytime when you apdate the weights you have to multiply th
 
 $n:$ Sample index
 
-Correction factor for $   m_{k}: 1-\beta_1^n $
+Correction factor for $m_{k}: 1-\beta_1^n$
 
-$(m_{k})_{corrected} =  \frac{m_{k}}{1-\beta_1^n}$
+$(m_{k})_{corrected}$ =  $\frac{m_{k}}{1-\beta_1^n}$
 
 Correction factor for $   r_{k}: 1-\beta_2^n $
 
